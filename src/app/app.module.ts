@@ -10,6 +10,14 @@ import { FlowerPageComponent } from './pages/flower-page/flower-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { NgIconsModule } from '@ng-icons/core';
+import {
+  bootstrapCart4,
+  bootstrapPerson,
+  bootstrapSearch,
+} from '@ng-icons/bootstrap-icons';
+import { HttpClientModule } from '@angular/common/http';
+import { FlowerCardComponent } from './components/flower-card/flower-card.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +29,18 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     LoginPageComponent,
     AdminPageComponent,
     CartPageComponent,
+    FlowerCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgIconsModule.withIcons({
+      bootstrapPerson,
+      bootstrapCart4,
+      bootstrapSearch,
+    }),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

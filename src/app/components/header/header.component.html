@@ -1,1 +1,59 @@
-<p>header works!</p>
+<div class="header">
+  <div class="top">
+    <div class="logo">
+      <a href="#" routerLink="/">
+        <span>FlowerMe</span>
+      </a>
+    </div>
+
+    <div class="search-bar">
+      <form>
+        <div class="search-box">
+          <div class="search-icon">
+            <ng-icon name="bootstrapSearch"></ng-icon>
+          </div>
+          <input type="text" placeholder="Find flower names or events" />
+          <div class="dropdown-menu">
+            <ul>
+              <li
+                class="dropdown-item"
+                *ngFor="let dropdownItem of dropdownMenu"
+              >
+                <div class="search-icon">
+                  <ng-icon name="bootstrapSearch"></ng-icon>
+                </div>
+                <span>
+                  {{ dropdownItem }}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button>Find</button>
+      </form>
+    </div>
+
+    <div class="function-icons">
+      <div class="user-icon">
+        <a href="#" routerLink="/home">
+          <ng-icon name="bootstrapPerson"></ng-icon>
+        </a>
+      </div>
+      <div class="cart-icon">
+        <a href="#" routerLink="/cart">
+          <ng-icon name="bootstrapCart4"></ng-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="category-list">
+      <ul>
+        <li class="category" *ngFor="let category of categoryList">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
