@@ -1,0 +1,31 @@
+.home-page {
+  .banner {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .banner__text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50px;
+      max-width: 450px;
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+  .flower-list {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+
+    ul {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 30px;
+    }
+  }
+}

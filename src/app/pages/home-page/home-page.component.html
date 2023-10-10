@@ -1,1 +1,25 @@
-<p>home-page works!</p>
+<div class="home-page">
+  <div class="banner">
+    <img
+      src="https://cdn.shopify.com/s/files/1/1252/1803/files/FCMY_Birthday_flowers_web.jpg?v=1691405178"
+      alt="banner"
+    />
+    <div class="banner__text">
+      <h1>Birthday Flowers</h1>
+      <p>
+        Everyone deserves to feel special on their birthday! Send your loved
+        ones and friends a gorgeous fresh birthday bouquet with same-day
+        delivery in Singapore today! Make them feel extra special with add-ons
+        like Fererro Rocher chocolates, plushies, or a bottle of bubbly!
+      </p>
+    </div>
+  </div>
+
+  <div class="flower-list">
+    <ul>
+      <li class="flower" *ngFor="let flower of flowerList">
+        <app-flower-card [flower]="flower"></app-flower-card>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -2,7 +2,7 @@ export class Flower {
   id!: number;
   name!: String;
   imageUrl!: String;
-  price!: Number;
-  quantity!: Number;
+  price!: number;
+  quantity!: number;
   category!: String;
 }
