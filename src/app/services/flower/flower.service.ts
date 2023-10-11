@@ -74,4 +74,8 @@ export class FlowerService {
       },
     ];
   }
+
+  public getById(id: number): Flower {
+    return this.getAll().filter((flower) => flower.id == id)[0];
+  }
 }

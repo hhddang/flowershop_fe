@@ -21,6 +21,7 @@ import {
 } from '@ng-icons/bootstrap-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { FlowerCardComponent } from './components/flower-card/flower-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FlowerCardComponent } from './components/flower-card/flower-card.compon
       bootstrapTwitter,
     }),
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

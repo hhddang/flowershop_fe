@@ -1,1 +1,21 @@
-<p>flower-page works!</p>
+<div class="flower-page">
+  <div class="image">
+    <img src="{{ flower.imageUrl }}" alt="{{ flower.name }}" />
+  </div>
+
+  <div class="info">
+    <div class="name">{{ flower.name }}</div>
+    <div class="price">{{ flower.price }} VND</div>
+    <div class="quantity">Rest amount: {{ flower.quantity }}</div>
+  </div>
+
+  <div class="function">
+    <span>Quantity</span>
+    <div class="count-box">
+      <button class="decrease-btn" (click)="decreaseCount()">-</button>
+      <input type="number" class="count" [(ngModel)]="count">
+      <button class="increase-btn" (click)="increaseCount()">+</button>
+    </div>
+    <button class="add-to-cart-btn" (click)="addToCart(flower, count)">ADD TO CART</button>
+  </div>
+</div>

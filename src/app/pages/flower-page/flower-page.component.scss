@@ -1,0 +1,88 @@
+.flower-page {
+  display: grid;
+  grid-template-areas:
+    "image info"
+    "image function";
+  padding: 20px 20px 50px;
+  justify-content: left;
+
+  .image {
+    grid-area: image;
+    margin-right: 20px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .info {
+    grid-area: info;
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+
+    .name {
+      font-weight: bold;
+      font-size: 26px;
+    }
+
+    .price {
+      color: red;
+      font-style: italic;
+      font-size: 30px;
+    }
+  }
+
+  .function {
+    margin: 0 20px;
+    grid-area: function;
+    display: flex;
+    height: 50px;
+    gap: 25px;
+    align-items: center;
+    margin-top: -60px;
+
+    .count-box {
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 100%;
+
+      .decrease-btn,
+      .increase-btn {
+        font-size: 30px;
+        background: none;
+        padding: 10px;
+      }
+
+      .count {
+        font-size: 20px;
+        font-weight: bold;
+        width: 45px;
+        height: 35px;
+        text-align: center;
+        background: none;
+        &:focus {
+          border: #000 1px solid;
+        }
+      }
+    }
+
+    .add-to-cart-btn {
+      width: 300px;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+      &:hover {
+        background: #ccc;
+      }
+    }
+  }
+}
