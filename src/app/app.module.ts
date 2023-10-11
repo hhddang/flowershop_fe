@@ -15,6 +15,9 @@ import {
   bootstrapCart4,
   bootstrapPerson,
   bootstrapSearch,
+  bootstrapFacebook,
+  bootstrapInstagram,
+  bootstrapTwitter,
 } from '@ng-icons/bootstrap-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { FlowerCardComponent } from './components/flower-card/flower-card.component';
@@ -38,6 +41,9 @@ import { FlowerCardComponent } from './components/flower-card/flower-card.compon
       bootstrapPerson,
       bootstrapCart4,
       bootstrapSearch,
+      bootstrapFacebook,
+      bootstrapInstagram,
+      bootstrapTwitter,
     }),
     HttpClientModule,
   ],
