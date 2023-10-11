@@ -11,11 +11,9 @@
 
   <div class="function">
     <span>Quantity</span>
-    <div class="count-box">
-      <button class="decrease-btn" (click)="decreaseCount()">-</button>
-      <input type="number" class="count" [(ngModel)]="count">
-      <button class="increase-btn" (click)="increaseCount()">+</button>
-    </div>
-    <button class="add-to-cart-btn" (click)="addToCart(flower, count)">ADD TO CART</button>
+    <app-quantity-box [quantity]="quantity" (onChangeQuantity)="changeQuantity($event)"></app-quantity-box>
+    <button class="add-to-cart-btn" (click)="addToCart(flower, quantity)">
+      ADD TO CART
+    </button>
   </div>
 </div>

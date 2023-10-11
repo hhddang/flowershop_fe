@@ -18,10 +18,16 @@ import {
   bootstrapFacebook,
   bootstrapInstagram,
   bootstrapTwitter,
+  bootstrapTrash,
 } from '@ng-icons/bootstrap-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { FlowerCardComponent } from './components/flower-card/flower-card.component';
 import { FormsModule } from '@angular/forms';
+import { QuantityBoxComponent } from './components/quantity-box/quantity-box.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     AdminPageComponent,
     CartPageComponent,
     FlowerCardComponent,
+    QuantityBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +52,14 @@ import { FormsModule } from '@angular/forms';
       bootstrapFacebook,
       bootstrapInstagram,
       bootstrapTwitter,
+      bootstrapTrash,
     }),
     HttpClientModule,
     FormsModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,27 @@
+.quantity-box {
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+
+  .decrease-btn,
+  .increase-btn {
+    font-size: 30px;
+    background: none;
+    padding: 10px;
+  }
+
+  .quantity {
+    font-size: 20px;
+    font-weight: bold;
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    background: none;
+    &:focus {
+      border: #000 1px solid;
+    }
+  }
+}

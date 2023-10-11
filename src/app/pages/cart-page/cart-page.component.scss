@@ -1,0 +1,125 @@
+.cart-page {
+  display: flex;
+  padding: 20px 20px 50px;
+  gap: 25px;
+
+  .cart-item-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > h1 {
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+
+    .empty-message {
+      margin-top: 20px;
+      font-size: 30px;
+    }
+
+    .table-header {
+      border-bottom: 1px solid black;
+      display: grid;
+      grid-template-columns: 60% 20% 20%;
+      padding-bottom: 10px;
+    }
+
+    .cart-item-list {
+      display: flex;
+      flex-direction: column;
+
+      .cart-item {
+        height: 130px;
+        display: grid;
+        grid-template-columns: 60% 20% 15% 5%;
+        align-items: center;
+
+        .image-name {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+            &:hover {
+              transform: scale(1.02);
+              color: #ccc;
+            }
+            .image {
+              height: 100px;
+            }
+            .name {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .delete-btn {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+          background: none;
+          transition: 0.3s;
+          &:hover {
+            font-size: 26px;
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  .delivery {
+    width: 500px;
+    & > h1 {
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+    .calendar {
+      margin-top: 10px;
+    }
+    .time-picker {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+
+      button {
+        padding: 8px;
+        border: 1px solid #000;
+        font-size: 16px;
+        background: #fff;
+        &:hover {
+          background: #000;
+          color: #fff;
+        }
+      }
+      button:first-child {
+        background: #000;
+        color: #fff;
+      }
+    }
+    .subtotal {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      span:nth-child(2) {
+        font-weight: bold;
+        color: red;
+      }
+    }
+    .submit-btn {
+      margin-top: 10px;
+      width: 100%;
+      height: 50px;
+      background: #000;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      &:hover {
+        background: #ccc;
+      }
+    }
+  }
+}

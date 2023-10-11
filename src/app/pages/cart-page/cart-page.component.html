@@ -1,1 +1,65 @@
-<p>cart-page works!</p>
+<div class="cart-page">
+  <div class="cart-item-table">
+    <h1>Shopping Cart</h1>
+
+    <span class="empty-message" *ngIf="cart.length <= 0"
+      >Your Cart is empty :((</span
+    >
+
+    <div class="table-header" *ngIf="cart.length > 0">
+      <span>Flower</span>
+      <span>Quantity</span>
+      <span>Price</span>
+    </div>
+
+    <div class="cart-item-list" *ngIf="cart.length > 0">
+      <div class="cart-item" *ngFor="let item of cart">
+        <div class="image-name">
+          <a href="#" routerLink="/flower/{{ item.flower.id }}">
+            <img
+              class="image"
+              src="{{ item.flower.imageUrl }}"
+              alt="{{ item.flower.name }}"
+            />
+            <span class="name">{{ item.flower.name }}</span>
+          </a>
+        </div>
+        <div>
+          <app-quantity-box
+            [quantity]="item.count"
+            (onChangeQuantity)="changeQuantity(item.flower, $event)"
+          ></app-quantity-box>
+        </div>
+        <span class="price"> {{ item.flower.price }} VND </span>
+        <button class="delete-btn" (click)="removeCartItem(item.flower)">
+          <ng-icon name="bootstrapTrash"></ng-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="delivery">
+    <h1>Delivery Information</h1>
+
+    <span>Select Delivery Date & Time</span>
+
+    <div class="calendar">
+      <mat-card class="calendar-card">
+        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+      </mat-card>
+    </div>
+
+    <div class="time-picker">
+      <button>9am-1pm</button>
+      <button>1pm-6pm</button>
+      <button>6am-9pm</button>
+    </div>
+
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span>{{ subtotal }} VND</span>
+    </div>
+
+    <button class="submit-btn">Verify and Complete</button>
+  </div>
+</div>

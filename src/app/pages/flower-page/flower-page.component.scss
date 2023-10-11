@@ -45,33 +45,6 @@
     align-items: center;
     margin-top: -60px;
 
-    .count-box {
-      background: #ccc;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      height: 100%;
-
-      .decrease-btn,
-      .increase-btn {
-        font-size: 30px;
-        background: none;
-        padding: 10px;
-      }
-
-      .count {
-        font-size: 20px;
-        font-weight: bold;
-        width: 45px;
-        height: 35px;
-        text-align: center;
-        background: none;
-        &:focus {
-          border: #000 1px solid;
-        }
-      }
-    }
-
     .add-to-cart-btn {
       width: 300px;
       height: 100%;

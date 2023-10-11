@@ -1,0 +1,10 @@
+<div class="quantity-box">
+  <button class="decrease-btn" (click)="decreaseQuantity()">-</button>
+  <input
+    type="number"
+    class="quantity"
+    [(ngModel)]="quantity"
+    (change)="changeInput($event)"
+  />
+  <button class="increase-btn" (click)="increaseQuantity()">+</button>
+</div>

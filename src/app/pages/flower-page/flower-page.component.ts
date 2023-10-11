@@ -11,7 +11,7 @@ import { FlowerService } from 'src/app/services/flower/flower.service';
 })
 export class FlowerPageComponent {
   flower!: Flower;
-  count: number = 1;
+  quantity: number = 1;
 
   constructor(
     private flowerService: FlowerService,
@@ -27,18 +27,11 @@ export class FlowerPageComponent {
     });
   }
 
-  public decreaseCount() {
-    if (this.count == 1) {
-      return;
-    }
-    this.count = this.count - 1;
-  }
-
-  public increaseCount() {
-    this.count = this.count + 1;
-  }
-
   public addToCart(flower: Flower, count: number) {
     this.cartService.addCartItem(flower, count);
+  }
+
+  public changeQuantity(newQuantity: number) {
+    this.quantity = newQuantity;
   }
 }
