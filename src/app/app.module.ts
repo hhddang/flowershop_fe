@@ -28,6 +28,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminFlowerCardComponent } from './components/admin-flower-card/admin-flower-card.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CartPageComponent,
     FlowerCardComponent,
     QuantityBoxComponent,
+    AdminFlowerCardComponent,
   ],
   imports: [
     BrowserModule,

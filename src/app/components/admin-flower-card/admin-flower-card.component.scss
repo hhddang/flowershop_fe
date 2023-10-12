@@ -1,0 +1,53 @@
+.admin-flower-card {
+  display: flex;
+  gap: 20px;
+  height: 200px;
+  padding: 10px;
+  &:hover {
+    box-shadow: 0 0 2px #000;
+  }
+
+  img {
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    .name {
+      font-weight: bold;
+    }
+    .price {
+      color: red;
+    }
+  }
+
+  .functions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-left: auto;
+
+    button {
+      width: 120px;
+      height: 50px;
+      transition: 0.3s;
+      color: #fff;
+      text-transform: uppercase;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &.import-btn {
+        background: green;
+      }
+      &.edit-btn {
+        background: orange;
+      }
+      &.remove-btn {
+        background: red;
+      }
+    }
+  }
+}

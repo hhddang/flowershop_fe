@@ -1,1 +1,12 @@
-<p>admin-page works!</p>
+<div class="admin-page">
+  <div class="flower-list">
+    <ul>
+      <li class="flower" *ngFor="let flower of flowerList">
+        <app-admin-flower-card
+          [flower]="flower"
+          (updateFlower)="updateFlower()"
+        ></app-admin-flower-card>
+      </li>
+    </ul>
+  </div>
+</div>
