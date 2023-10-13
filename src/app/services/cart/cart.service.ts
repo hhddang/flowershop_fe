@@ -6,45 +6,24 @@ import { Flower } from 'src/app/models/flower';
   providedIn: 'root',
 })
 export class CartService {
-  cart: Cart = []
-  //   {
-  //     flower: {
-  //       id: 8,
-  //       name: 'Hot Romance',
-  //       imageUrl:
-  //         'https://www.flowerchimp.sg/cdn/shop/files/2b_1d73ccae-f210-48dd-8bc5-52450c17a712_493x.jpg?v=1696559826',
-  //       price: 100000,
-  //       quantity: 100,
-  //       category: 'birthday',
-  //     },
-  //     count: 1,
-  //   },
-  //   {
-  //     flower: {
-  //       id: 9,
-  //       name: 'White Star',
-  //       imageUrl:
-  //         'https://www.flowerchimp.sg/cdn/shop/products/BR_A051_493x.jpg?v=1628495580',
-  //       price: 80000,
-  //       quantity: 30,
-  //       category: 'funeral',
-  //     },
-  //     count: 5,
-  //   },
-  // ];
-
   constructor() {}
 
-  public isExisted(flower: Flower): Boolean {
-    if (this.cart.filter((item) => item.flower.name == flower.name).length) {
+  private isExisted(flower: Flower): Boolean {
+    const cart = this.getAll();
+    if (cart.filter((item) => item.flower.name == flower.name).length) {
       return true;
     }
     return false;
   }
 
+  private writeCartToLocalStorage(cart: Cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
   public addCartItem(flower: Flower, count: number) {
+    const cart = this.getAll();
     if (this.isExisted(flower)) {
-      const cartItem: CartItem = this.cart.filter(
+      const cartItem = cart.filter(
         (item) => item.flower.name == flower.name
       )[0];
       cartItem.count += count;
@@ -53,22 +32,28 @@ export class CartService {
         flower,
         count,
       };
-      this.cart.push(newCartItem);
+      cart.push(newCartItem);
     }
+    this.writeCartToLocalStorage(cart);
   }
 
   public getAll(): Cart {
-    return this.cart;
+    var stringCart = localStorage.getItem('cart')?.toString() || '[]';
+    const cart = <Cart>JSON.parse(stringCart);
+    console.log(stringCart, cart);
+    return cart;
   }
 
   public changeCartItemQuantity(flower: Flower, count: number) {
-    const cartItem: CartItem = this.cart.filter(
-      (item) => item.flower.name == flower.name
-    )[0];
+    const cart = this.getAll();
+    const cartItem = cart.filter((item) => item.flower.name == flower.name)[0];
     cartItem.count = count;
+    this.writeCartToLocalStorage(cart);
   }
 
   public removeCartItem(flower: Flower) {
-    this.cart = this.cart.filter((item) => item.flower.name != flower.name);
+    const cart = this.getAll();
+    const newCart = cart.filter((item) => item.flower.name != flower.name);
+    this.writeCartToLocalStorage(newCart);
   }
 }
