@@ -32,7 +32,7 @@ export class AuthService {
 
   public logout() {
     this.removeToken();
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('');
   }
 
   public logIn(email: string, password: string) {

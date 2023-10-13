@@ -20,6 +20,7 @@ import {
   bootstrapTwitter,
   bootstrapTrash,
   bootstrapPlus,
+  bootstrapDoorOpen,
 } from '@ng-icons/bootstrap-icons';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlowerCardComponent } from './components/flower-card/flower-card.component';
@@ -58,6 +59,7 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
       bootstrapTwitter,
       bootstrapTrash,
       bootstrapPlus,
+      bootstrapDoorOpen,
     }),
     HttpClientModule,
     FormsModule,
