@@ -1,10 +1,18 @@
 <div class="admin-page">
+  <div class="functions">
+    <button class="new-btn" (click)="exAddFlower()">
+      <div class="plus-icon">
+        <ng-icon name="bootstrapPlus"></ng-icon>
+      </div>
+      <span>New Flower</span>
+    </button>
+  </div>
   <div class="flower-list">
     <ul>
       <li class="flower" *ngFor="let flower of flowerList">
         <app-admin-flower-card
           [flower]="flower"
-          (updateFlower)="updateFlower()"
+          (updateFlower)="onUpdateFlower()"
         ></app-admin-flower-card>
       </li>
     </ul>

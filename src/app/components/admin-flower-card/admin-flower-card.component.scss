@@ -3,8 +3,10 @@
   gap: 20px;
   height: 200px;
   padding: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
   &:hover {
-    box-shadow: 0 0 2px #000;
+    box-shadow: 0 0 3px #000;
   }
 
   img {

@@ -19,8 +19,9 @@ import {
   bootstrapInstagram,
   bootstrapTwitter,
   bootstrapTrash,
+  bootstrapPlus,
 } from '@ng-icons/bootstrap-icons';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlowerCardComponent } from './components/flower-card/flower-card.component';
 import { FormsModule } from '@angular/forms';
 import { QuantityBoxComponent } from './components/quantity-box/quantity-box.component';
@@ -29,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminFlowerCardComponent } from './components/admin-flower-card/admin-flower-card.component';
+import { InterceptorService } from './services/interceptor/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { AdminFlowerCardComponent } from './components/admin-flower-card/admin-f
       bootstrapInstagram,
       bootstrapTwitter,
       bootstrapTrash,
+      bootstrapPlus,
     }),
     HttpClientModule,
     FormsModule,
@@ -63,7 +66,9 @@ import { AdminFlowerCardComponent } from './components/admin-flower-card/admin-f
     MatNativeDateModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -15,7 +15,7 @@
     <div class="cart-item-list" *ngIf="cart.length > 0">
       <div class="cart-item" *ngFor="let item of cart">
         <div class="image-name">
-          <a href="#" routerLink="/flower/{{ item.flower.id }}">
+          <a href="#" routerLink="/flower/{{ item.flower.flowerId }}">
             <img
               class="image"
               src="{{ item.flower.imageUrl }}"

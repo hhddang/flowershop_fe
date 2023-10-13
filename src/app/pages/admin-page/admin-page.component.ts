@@ -13,10 +13,38 @@ export class AdminPageComponent {
   constructor(private flowerService: FlowerService) {}
 
   ngOnInit() {
-    this.flowerList = this.flowerService.getAll();
+    this.getFlowerList();
   }
 
-  updateFlower() {
-    this.flowerList = this.flowerService.getAll();
+  private getFlowerList() {
+    this.flowerService
+      .getAll()
+      .subscribe((flowerList) => (this.flowerList = flowerList));
+  }
+
+  public addFlower(flower: Flower) {
+    this.flowerService.create(flower).subscribe((response) => {
+      if (response.success) {
+        alert('Add flower success');
+        this.getFlowerList();
+      }
+    });
+  }
+
+  public onUpdateFlower() {
+    this.getFlowerList();
+  }
+
+  // Example
+
+  public exAddFlower() {
+    this.addFlower({
+      flowerId: 0,
+      name: 'New',
+      imageUrl: 'image url',
+      price: 1000,
+      quantity: 10,
+      category: 'love',
+    });
   }
 }

@@ -22,7 +22,9 @@ export class FlowerPageComponent {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       if (params['flowerId']) {
-        this.flower = this.flowerService.getById(params['flowerId']);
+        this.flowerService
+          .getById(params['flowerId'])
+          .subscribe((flower) => (this.flower = flower));
       }
     });
   }

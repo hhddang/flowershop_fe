@@ -13,6 +13,8 @@ export class HomePageComponent {
   constructor(private flowerService: FlowerService) {}
 
   ngOnInit() {
-    this.flowerList = this.flowerService.getAll();
+    this.flowerService
+      .getAll()
+      .subscribe((flowerList) => (this.flowerList = flowerList));
   }
 }

@@ -3,12 +3,21 @@
     <h1>Login</h1>
     <div class="input-group">
       <span>Email</span>
-      <input type="text" placeholder="Enter your email here" />
+      <input
+        type="text"
+        placeholder="Enter your email here"
+        [(ngModel)]="email"
+      />
     </div>
     <div class="input-group">
       <span>Password</span>
-      <input type="password" placeholder="Enter your password here" />
+      <input
+        type="password"
+        placeholder="Enter your password here"
+        [(ngModel)]="password"
+      />
     </div>
-    <button>Let's Go</button>
+    <button (click)="login()">Let's Go</button>
   </form>
+  {{ email }}
 </div>

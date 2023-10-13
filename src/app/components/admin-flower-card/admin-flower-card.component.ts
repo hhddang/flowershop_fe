@@ -17,20 +17,50 @@ export class AdminFlowerCardComponent {
   constructor(private flowerService: FlowerService) {}
 
   public importFlower(flower: Flower, quantity: number) {
-    this.flowerService.update(flower.id, {
-      ...flower,
-      quantity: flower.quantity + quantity,
-    });
-    this.updateFlower.emit();
+    this.flowerService
+      .update(flower.flowerId, {
+        ...flower,
+        quantity: flower.quantity + quantity,
+      })
+      .subscribe((response) => {
+        if (response.success) {
+          this.updateFlower.emit();
+        }
+      });
   }
 
+  // public editFlower(flower: Flower) {
+  //   this.flowerService.update(flowerId, flower).subscribe((response) => {
+  //     if (response.success) {
+  //       console.log('Update flower success: name = ', flower.name);
+  //       this.getFlowerList();
+  //     }
+  //   });
+  // }
+
+  // public deleteFlower(flowerId: number) {
+  //   this.flowerService.delete(flowerId).subscribe((response) => {
+  //     if (response.success) {
+  //       console.log('Delete flower success: id = ', flowerId);
+  //       this.getFlowerList();
+  //     }
+  //   });
+  // }
   public editFlower(flower: Flower) {
-    this.flowerService.update(flower.id, { ...flower, name: 'Edited' });
-    this.updateFlower.emit();
+    this.flowerService
+      .update(flower.flowerId, { ...flower, name: 'Edited' })
+      .subscribe((response) => {
+        if (response.success) {
+          this.updateFlower.emit();
+        }
+      });
   }
 
   public removeFlower(flowerId: number) {
-    this.flowerService.remove(flowerId);
-    this.updateFlower.emit();
+    this.flowerService.delete(flowerId).subscribe((response) => {
+      if (response.success) {
+        this.updateFlower.emit();
+      }
+    });
   }
 }

@@ -6,8 +6,8 @@
     <span class="quantity">Quantity: {{ flower.quantity }}</span>
   </div>
   <div class="functions">
-    <button class="import-btn" (click)="importFlower(flower, 10)">Import</button>
+    <button class="import-btn" (click)="importFlower(flower, 1)">Import</button>
     <button class="edit-btn" (click)="editFlower(flower)">Edit flower</button>
-    <button class="remove-btn" (click)="removeFlower(flower.id)">Remove</button>
+    <button class="remove-btn" (click)="removeFlower(flower.flowerId)">Remove</button>
   </div>
 </div>
