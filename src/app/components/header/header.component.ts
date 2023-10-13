@@ -18,7 +18,10 @@ export class HeaderComponent {
   ) {}
 
   ngOnInit() {
-    this.categoryList = this.categoryService.getAll();
+    this.categoryService
+      .getAll()
+      .subscribe((categoryList) => {
+        this.categoryList = categoryList});
   }
 
   public logout() {

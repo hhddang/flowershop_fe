@@ -1,4 +1,4 @@
-export class Category {
-  id!: Number;
-  name!: String;
-}
+export type Category = {
+  categoryId: number;
+  category: string;
+};
