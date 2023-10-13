@@ -5,13 +5,18 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FlowerPageComponent } from './pages/flower-page/flower-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { authGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
-  { path: 'admin', component: AdminPageComponent },
-  { path: 'home', component: HomePageComponent },
-  { path: 'flower/:flowerId', component: FlowerPageComponent },
-  { path: 'cart', component: CartPageComponent },
+  { path: 'admin', component: AdminPageComponent, canActivate: [authGuard] },
+  { path: 'home', component: HomePageComponent, canActivate: [authGuard] },
+  {
+    path: 'flower/:flowerId',
+    component: FlowerPageComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'cart', component: CartPageComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({
